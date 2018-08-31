@@ -5,3 +5,10 @@
 {{model.teacher.status}}<br>
 {{model.teacher.campusCode}}<br>
 {{model.teacher.assignedEvaluation}}<br>
+<ul>
+	{{#each model.teacher.skillTests as |skill|}}
+
+	    <li> {{skill.skillTest}} </li>
+	    <li> {{skill.type}} </li>
+	{{/each}}
+</ul>
