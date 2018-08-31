@@ -8,6 +8,8 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('graphics-line');
+  this.route('graphics-line', {path:'graphics-line/:id'});
+  this.route('profile', {path:'profile/:enrollment'});
 });
 
 export default Router;

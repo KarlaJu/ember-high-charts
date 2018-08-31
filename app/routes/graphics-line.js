@@ -2,9 +2,10 @@ import Route from '@ember/routing/route';
 import RSVP from 'rsvp';
 
 export default Route.extend({
-	model(){
+	model(params){
 		let lista = [1,2,3,4,1,2,3,4];
 		let competencias = ['Cultura EBC', 'Comunicación Interpersonal', 'Comunicación Intrapersonal', 'Gestión de Clase', 'Gestión Tecnológica', 'Liderazgo', 'Orientación al alumno', 'Vinculación laboral'];
+		
 		let user = [
 		{"level":1, "description":'Cultura EBC'},
 		{"level":2, "description":'Comunicación Interpersonal'},
@@ -17,8 +18,10 @@ export default Route.extend({
 		];
 
 
+		debugger;
 
 
+		//--> charts
 		let chartOptions = {
 			chart: {
 				type: 'line',
@@ -53,9 +56,12 @@ export default Route.extend({
       }]
 		};
 
+		//---> end charts
+
 		return RSVP.hash({
 			options: chartOptions,
-			level: user
+			level: user,
+			skills: skills
 
 
 		});
