@@ -1,5 +1,21 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<div class="container">
+  <br>
+  <div class="header clearfix">
+    <nav>
+      <ul class="nav nav-pills pull-right">
+        <li role="presentation" class="active">{{#link-to 'graphics-line'}} Propuesta Mediana Media {{/link-to}}</li>
+      </ul>
+    </nav>
+		<br><br>
+    <h3 class="text-muted"> Making Devs</h3>
+  </div>
 
-{{outlet}}
+  {{outlet}}
+
+  <br><br>
+
+  <footer class="footer">
+    <p>&copy; Making Devs</p>
+  </footer>
+
+</div> <!-- /container -->

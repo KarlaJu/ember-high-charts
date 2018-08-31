@@ -1,0 +1,28 @@
+
+<h2> Ejemplo de Gráfica Personal de un Prospecto </h2>
+{{high-charts chartOptions=model.options}}
+
+{{model.list}}
+
+
+
+<div class="row">
+	<div class="col-md-6 offeset-md-3">
+    <table class="table table-sm table-hover">
+      <thead>
+        <tr>  
+          <th scope="col">Competencia</th>
+          <th scope="col">Nivel</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each model.level as |graph|}}
+          <tr>
+            <td> {{graph.level}} </td>
+            <td> {{graph.description}} </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
