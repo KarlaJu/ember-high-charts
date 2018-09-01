@@ -26,15 +26,15 @@
 	                        	<table class="table table-sm">
 													    <thead>
 													      <tr>
-													        <th>Competencia</th>
-													        <th>Nivel</th>
+													        <th class="text-center">Competencia</th>
+													        <th class="text-center">Nivel</th>
 													      </tr>
 													    </thead>
 													    <tbody>
 													      {{#each model.teacher.skillTests as |skill|}}
 														      <tr>
-														        <td>{{skill.skillTest}}</td>
-														        <td>{{skill.type}}</td>
+														        <td class="text-center">{{skill.skillTest}}</td>
+														        <td class="text-center">{{skill.type}}</td>
 														      </tr>
 													      {{/each}}
 													    </tbody>
