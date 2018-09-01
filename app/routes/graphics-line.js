@@ -18,8 +18,6 @@ export default Route.extend({
 		];
 
 
-		debugger;
-
 
 		//--> charts
 		let chartOptions = {
