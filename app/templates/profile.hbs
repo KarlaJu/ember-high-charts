@@ -5,13 +5,7 @@
 {{model.teacher.status}}<br>
 {{model.teacher.campusCode}}<br>
 {{model.teacher.assignedEvaluation}}<br>
-<ul>
-	{{#each model.teacher.skillTests as |skill|}}
 
-	    <li> {{skill.skillTest}} </li>
-	    <li> {{skill.type}} </li>
-	{{/each}}
-</ul>
 
 <div class="container">
     <div class="row">
@@ -26,23 +20,26 @@
                         <div class="col-md-12">Me ves?</div>
                     </div>
                      <div class="row">
-                        <div class="col-md-12">
-                        	<table class="table">
-												    <thead>
-												      <tr>
-												        <th>Competencia</th>
-												        <th>Nivel</th>
-												      </tr>
-												    </thead>
-												    <tbody>
-												      {{#each model.teacher.skillTests as |skill|}}
+                     		<div class="col-md-3"></div>
+                        <div class="col-md-6">
+                        	<div class="table-responsive">
+	                        	<table class="table table-condensed">
+													    <thead>
 													      <tr>
-													        <td>{{skill.skillTest}}</td>
-													        <td>{{skill.type}}</td>
+													        <th>Competencia</th>
+													        <th>Nivel</th>
 													      </tr>
-												      {{/each}}
-												    </tbody>
-												  </table>
+													    </thead>
+													    <tbody>
+													      {{#each model.teacher.skillTests as |skill|}}
+														      <tr>
+														        <td>{{skill.skillTest}}</td>
+														        <td>{{skill.type}}</td>
+														      </tr>
+													      {{/each}}
+													    </tbody>
+													  </table>
+													</div>
                         </div>
                     </div>
                 </div>
