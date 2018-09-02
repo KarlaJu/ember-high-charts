@@ -58,10 +58,7 @@ export default Route.extend({
 
 		return RSVP.hash({
 			options: chartOptions,
-			level: user,
-			skills: skills
-
-
+			level: user
 		});
 	}
 });
