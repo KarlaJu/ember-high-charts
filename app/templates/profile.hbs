@@ -4,18 +4,19 @@
   <div class="row">
     <div class="col-md-12">
       <div class="panel panel-primary">
+        <div class="panel-heading">Resultados de la Evaluación</div>
+        <br>
         <div class="text-center">
           <div class="fa fa-bar-chart" style="font-size: 48px"></div>
         </div>
         <div class="text-center font-weight-bold"> Expolora aquí tus resultados</div>
-        <div class="panel-heading" class="text-center">Resultados de la Evaluación</div>
         <div class="panel-body">
           <div class="row">
-            <div class="col-md-12">{{high-charts chartOptions=model.options}}</div>
+            <div class="col-md-11">{{high-charts chartOptions=model.options}}</div>
           </div><br><br>
           <div class="row">
-            <div class="col-md-3"></div>
-              <div class="col-md-6">
+            <div class="col-md-2"></div>
+              <div class="col-md-7">
                 <div class="table-responsive">
                   <table class="table table-sm">
                     <thead>
@@ -29,9 +30,9 @@
                         <tr>
                           <td class="text-center">{{skill.skillTest}}</td>
                           <td class="text-center">
-                            <button type="button" class="btn btn-primary btn-sm">
-                              {{skill.type}}
-                            </button>
+                            <span class="label label-primary">
+                                {{skill.type}}
+                            </span>
                           </td>
                         </tr>
                       {{/each}}
@@ -43,10 +44,11 @@
         </div>
         <div class="row">
           <div class="col-md-12 text-center">
-            <span class="glyphicon glyphicon-ok" style="font-size: 48px"></span>
+            <span class="glyphicon glyphicon-ok" style="font-size: 46px"></span>
             <div class="font-weight-bold">Resultado de tu evaluación</div>
+            <br>
+            <br>
           </div>
-
         </div>
       </div>
     </div>      
