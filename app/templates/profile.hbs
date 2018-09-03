@@ -6,42 +6,17 @@
       <div class="panel panel-primary">
         <div class="panel-heading">Resultados de la Evaluación</div>
         <br>
+
         <div class="text-center">
           <div class="fa fa-bar-chart" style="font-size: 48px"></div>
         </div>
+
         <div class="text-center font-weight-bold"> Expolora aquí tus resultados</div>
+        
         <div class="panel-body">
-          <div class="row">
-            <div class="col-md-11">{{high-charts chartOptions=model.options}}</div>
-          </div><br><br>
-          <div class="row">
-            <div class="col-md-2"></div>
-              <div class="col-md-7">
-                <div class="table-responsive">
-                  <table class="table table-sm">
-                    <thead>
-                      <tr>
-                        <th class="text-center">Competencia</th>
-                        <th class="text-center">Nivel</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {{#each model.teacher.skillTests as |skill|}}
-                        <tr>
-                          <td class="text-center">{{skill.skillTest}}</td>
-                          <td class="text-center">
-                            <span class="label label-primary">
-                                {{skill.type}}
-                            </span>
-                          </td>
-                        </tr>
-                      {{/each}}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
+          {{profile-chart teacher=model.teacher}}
         </div>
+        
         <div class="row">
           <div class="col-md-12 text-center">
             <span class="glyphicon glyphicon-ok" style="font-size: 46px"></span>
