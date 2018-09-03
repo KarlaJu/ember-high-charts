@@ -3,7 +3,14 @@ import ENV from "../config/environment";
 import RSVP from 'rsvp';
 
 export default Route.extend({
+  beforeModel(/* transition */) {
+    //this.transitionTo('posts'); // Implicitly aborts the on-going transition.
+  
+    console.log("Before model here!!!");
+  },
+
 	model(params){
+    
     
     let teacher= new RSVP.Promise(function (resolve, reject) {
       $.ajax({
@@ -16,10 +23,59 @@ export default Route.extend({
           reject(error);
         }
       });
-    });
+    }); 
 
-    let competencias = teacher.skillTests;
+    let teacherExample = {
+      "id": 180,
+      "username": "cf.ruiz",
+      "enrollment": "M00227967",
+      "author": "ia.quiroga",
+      "status": "Contestada",
+      "campusCode": "LEO",
+      "assignedEvaluation": "Evaluación Docencia I DIC 2017",
+      "skillTests": [
+        {
+          "skillTest": "Cultura EBC",
+          "type": "Imprecisa"
+        },
+        {
+          "skillTest": "Gestión de Clase",
+          "type": "Latente"
+        },
+        {
+          "skillTest": "Comunicación Intrapersonal",
+          "type": "Produciendo"
+        },
+        {
+          "skillTest": "Comunicación Interpersonal",
+          "type": "Latente"
+        },
+        {
+          "skillTest": "Orientación al alumno",
+          "type": "Produciendo"
+        },
+        {
+          "skillTest": "Liderazgo",
+          "type": "Produciendo"
+        },
+        {
+          "skillTest": "Vinculación laboral",
+          "type": "Latente"
+        },
+        {
+          "skillTest": "Gestión tecnológica",
+          "type": "Latente"
+        }
+      ]
+    };
+
+
+
+    let competencias = teacherExample.skillTests.skillTest;
     let lista = [1,2,3,4,1,2,3,4];
+    
+    console.log(teacher.assignedEvaluation);
+    console.log(teacher.username);
 
 
     let chartOptions = {
@@ -27,10 +83,10 @@ export default Route.extend({
         type: 'line',
       },
       title: {
-        text: teacher.assignedEvaluation
+        text: teacherExample.assignedEvaluation
       },
       subtitle:{
-        text: teacher.username
+        text: teacherExample.username
       },
       xAxis: {
         categories: competencias
