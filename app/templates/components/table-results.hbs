@@ -1,1 +1,27 @@
-{{yield}}
+			     <div class="row">
+            <div class="col-md-2"></div>
+              <div class="col-md-7">
+                <div class="table-responsive">
+                  <table class="table table-sm">
+                    <thead>
+                      <tr>
+                        <th class="text-center">Competencia</th>
+                        <th class="text-center">Nivel</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {{#each teacher.skillTests as |skill|}}
+                        <tr>
+                          <td class="text-center">{{skill.skillTest}}</td>
+                          <td class="text-center">
+                            <span class="label label-primary">
+                                {{skill.type}}
+                            </span>
+                          </td>
+                        </tr>
+                      {{/each}}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
