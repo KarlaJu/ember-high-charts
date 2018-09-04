@@ -5,20 +5,11 @@ export default Component.extend({
 
 	chartModel: Ember.computed('teacher', function(){
 		let current_teacher = this.get('teacher');
-		//let records = this.get('records').get('content');
-		// Call a function
 		let title = this.getTitle(current_teacher);
     let subtitle = this.getSubtitle(current_teacher);
     let skillTests = this.getResults(current_teacher).listOfSkilltests;
     let skillType = this.getResults(current_teacher).listOfTypes;
 
-		//let getResults = this.getResults( current_teacher.skillTests );
-
-		/*records.forEach(function(record){
-						skillTestValues.push( answersType[record.__data.type] );
-						skillTestNames.push( record.__data.skillTest );
-				});
-*/     
 		let chartModel = {
 			chart: {
 				type: 'line',
@@ -52,8 +43,6 @@ export default Component.extend({
 				data: skillType
 			}]
 		};
-
-
 		return chartModel;
 	}),
 
