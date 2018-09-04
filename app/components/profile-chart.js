@@ -3,60 +3,77 @@ import Component from '@ember/component';
 export default Component.extend({
 
 
-	chartModel: Ember.computed('', function(){
+	chartModel: Ember.computed('teacher', function(){
 		let current_teacher = this.get('teacher');
-
+		//let records = this.get('records').get('content');
 		// Call a function
-		let title = this.getTitle();
+		let title = this.getTitle(current_teacher);
+    let subtitle = this.getSubtitle(current_teacher);
+    let skillTests = this.getResults(current_teacher).listOfSkilltests;
+    let skillType = this.getResults(current_teacher).listOfTypes;
 
-		let getResults = this.getResults( current_teacher.skillTests );
+		//let getResults = this.getResults( current_teacher.skillTests );
 
-    let chartModel = {
-      chart: {
-        type: 'line',
-      },
-      title: {
-        text: title
-      },
-      subtitle:{
-        text: "Subtitulo"
-      },
-      xAxis: {
-        categories: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
-      },
-      yAxis: {
-        title:{
-          text: "Nivel"
-        },
-        categories: ['','1 Latente', '2 Impreciso', '3 Gestándose', '4 Produciendo']
-      },
+		/*records.forEach(function(record){
+						skillTestValues.push( answersType[record.__data.type] );
+						skillTestNames.push( record.__data.skillTest );
+				});
+*/     
+		let chartModel = {
+			chart: {
+				type: 'line',
+			},
+			title: {
+				text: title
+			},
+			subtitle:{
+				text: subtitle
+			},
+			xAxis: {
+				categories: skillTests
+			},
+			yAxis: {
+				title:{
+					text: "Nivel"
+				},
+				categories: ['','1 Latente', '2 Impreciso', '3 Gestándose', '4 Produciendo']
+			},
 
-      plotOptions: {
-        line: {
-          dataLabels: {
-            enabled: true
-          },
-          enableMouseTracking: true
-        }
-      },
-      series: [{
-        name: 'Usuario Evaluado',
-        data: [1,2,3,4,1,2,3,4]
-      }]
-    };
+			plotOptions: {
+				line: {
+					dataLabels: {
+						enabled: true
+					},
+					enableMouseTracking: true
+				}
+			},
+			series: [{
+				name: 'Usuario Evaluado',
+				data: skillType
+			}]
+		};
 
 
 		return chartModel;
 	}),
 
-	getTitle: function(){
-		return "Que me ves?";
+	getTitle: function(current_teacher){
+		return current_teacher.assignedEvaluation;
 	},
 
-	getResults: function(teacher){
-		let map = {"imprecisa":1, "latente":2, "gestandose":3, "produciendo":4 }
-		list = map[teacher.skillTests.type]
-		return list
-	}
+  getSubtitle: function(current_teacher){
+    return current_teacher.username;
+  },
 
+	getResults: function(current_teacher){
+    let listOfSkilltests = [];
+    let listOfTypes = [];
+    let map = {"Imprecisa":1, "Latente":2, "Gestándose":3, "Produciendo":4 }
+    current_teacher.skillTests.forEach(function(record){
+        listOfSkilltests.push(record.skillTest);
+        listOfTypes.push(map[record.type]);
+      })
+    let mapSkillsResult = {listOfSkilltests, listOfTypes};
+		return mapSkillsResult
+	}
 });
