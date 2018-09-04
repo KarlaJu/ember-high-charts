@@ -11,35 +11,35 @@ export default function() {
       "skillTests": [
         {
           "skillTest": "Cultura EBC",
-          "type": "IMPRECISE"
+          "type": "Imprecisa"
         },
         {
           "skillTest": "Gestión de Clase",
-          "type": "LATENT"
+          "type": "Latente"
         },
         {
           "skillTest": "Comunicación Intrapersonal",
-          "type": "PRODUCING"
+          "type": "Produciendo"
         },
         {
           "skillTest": "Comunicación Interpersonal",
-          "type": "LATENT"
+          "type": "Latente"
         },
         {
           "skillTest": "Orientación al alumno",
-          "type": "PRODUCING"
+          "type": "Produciendo"
         },
         {
           "skillTest": "Liderazgo",
-          "type": "PRODUCING"
+          "type": "Produciendo"
         },
         {
           "skillTest": "Vinculación laboral",
-          "type": "LATENT"
+          "type": "Latente"
         },
         {
           "skillTest": "Gestión tecnológica",
-          "type": "LATENT"
+          "type": "Latente"
         }
       ]
     };
