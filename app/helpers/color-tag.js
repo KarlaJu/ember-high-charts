@@ -1,7 +1,5 @@
-import { helper } from '@ember/component/helper';
+import Ember from 'ember';
 
-export function colorTag(params/*, hash*/) {
-  return params;
-}
+const eq = (params) => params[0] === params[1];
 
-export default helper(colorTag);
+export default Ember.Helper.helper(eq);
