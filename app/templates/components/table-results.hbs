@@ -14,9 +14,18 @@
                         <tr>
                           <td class="text-center">{{skill.skillTest}}</td>
                           <td class="text-center">
-                            <span class="label label-default pull-right">
-                                {{skill.type}}
-                            </span>
+                            {{#if (color-tag skill.type "Produciendo")}}
+                            <span class="label label-success">Produciendo</span>
+                            {{/if}}
+                            {{#if (color-tag skill.type "Gestándose")}}
+                            <span class="label label-primary">Gestándose</span>
+                            {{/if}}
+                            {{#if (color-tag skill.type "Imprecisa")}}
+                            <span class="label label-warning">Impreciso</span>
+                            {{/if}}
+                            {{#if (color-tag skill.type "Latente")}}
+                            <span class="label label-danger">Latente</span>
+                            {{/if}}
                           </td>
                         </tr>
                       {{/each}}
