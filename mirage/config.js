@@ -23,7 +23,7 @@ export default function() {
         },
         {
           "skillTest": "Comunicación Interpersonal",
-          "type": "Latente"
+          "type": "Gestándose"
         },
         {
           "skillTest": "Orientación al alumno",
